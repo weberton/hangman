@@ -11,12 +11,10 @@ pipeline {
                         .findAll { f -> f.directory }
                         .collect{ f -> f.path.replace('/', '\\') - ~/\\[^\\]+$/ }
 
-                    packageDir.each { d ->
-                        dir(d) {
-                            // Process each package here
-                            echo e;
-                        }
-                    }
+              for file in folders:
+                echo """
+                ${files[0].name} ${files[0].path} ${files[0].directory}
+                ${fil
                  }
             }
         }
