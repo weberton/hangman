@@ -8,6 +8,7 @@ pipeline {
 
                 script {
                     def folders =  findFiles(glob: '**/*')
+                         .findAll { f -> f.directory }
                  }
             }
         }
