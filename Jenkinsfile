@@ -35,7 +35,7 @@ pipeline {
                             //assert z == '2'
 
                             def newName = name + '-latest.jar';
-                             sh 'mv ${fileName} dist/${newName}'
+                             sh 'mv '+ fileName + ' dist/' + newName
                             echo 'New name:' + newName
                             //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: fileName, targetLocation: 'dist/'+ newName)])
                             sh 'ls dist'
