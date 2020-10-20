@@ -21,12 +21,12 @@ pipeline {
 
                 script {
                     sh 'ls /opt/'
-                    def files =  findFiles(glob: "**/*.jar").split(".")
+                    def files =  findFiles(glob: "**/*.jar")
                     files.each { item ->
 
                             echo "Hello ${item}"
                             def fileName = "${item}"
-                            echo fileName
+                            echo fileName.getName()
                            // fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '${item}', targetLocation: 'F:\Test\Sample')])
                     }
                     //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'C:\workspace\Hello\**', targetLocation: 'F:\Test\Sample')])
