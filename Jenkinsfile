@@ -26,8 +26,10 @@ pipeline {
 
                             echo "Hello ${item}"
                             def fileName = "${item}"
-                            def test = fileName.split(".")
-                            echo test
+                            def (v, z) =  '1128-2'.split('-')
+
+                            assert v == '1128'
+                            assert z == '2'
                            // fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '${item}', targetLocation: 'F:\Test\Sample')])
                     }
                     //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'C:\workspace\Hello\**', targetLocation: 'F:\Test\Sample')])
