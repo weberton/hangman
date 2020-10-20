@@ -10,6 +10,7 @@ pipeline {
 
          stage('Clean') {
              steps {
+             echo "PATH is: $PATH"
                        sh 'mvn clean package'
               }
          }
