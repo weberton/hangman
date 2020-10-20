@@ -4,6 +4,11 @@ pipeline {
     stages {
 
         stage('Create file') {
+                stage('Clean') {
+                    steps {
+                       sh 'mvn clean package'
+                    }
+                }
             steps {
 
                 script {
