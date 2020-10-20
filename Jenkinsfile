@@ -2,7 +2,7 @@ pipeline {
     agent any
 
   environment {
-    PATH = "/opt/maven/bin:$PATH"
+    PATH = "/Users/wfaria/development/apache-maven-3.6.3/bin:$PATH"
   }
 
     stages {
@@ -11,7 +11,7 @@ pipeline {
          stage('Clean') {
              steps {
              script {
-              sh 'ls /opt'
+              sh 'ls /Users/wfaria/development/apache-maven-3.6.3/'
              }
              echo "PATH is: $PATH"
                        sh 'mvn clean package'
