@@ -20,6 +20,7 @@ pipeline {
             steps {
 
                 script {
+                    sh 'rm -r dist'
                     sh 'mkdir -p dist'
                     def files =  findFiles(glob: "**/*.jar")
                     files.each { item ->
@@ -33,7 +34,8 @@ pipeline {
                             //assert v == '1128'
                             //assert z == '2'
                             def newName = name + '-latest.jar';
-                            fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: fileName, targetLocation: './dist/${newName}')])
+                            echo 'New name:' + newName
+                            fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: fileName, targetLocation: './dist/'+ newName)])
                             sh 'ls ./dist'
                     }
                     //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'C:\workspace\Hello\**', targetLocation: 'F:\Test\Sample')])
