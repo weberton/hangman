@@ -21,7 +21,7 @@ pipeline {
 
                 script {
                     sh 'ls /opt/'
-                    def files =  findFiles(glob: "**/*.jar").split("\\.")
+                    def files =  findFiles(glob: "**/*.jar").split(".")
                     files.each { item ->
 
                             echo "Hello ${item}"
