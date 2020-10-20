@@ -26,7 +26,7 @@ pipeline {
 
                             echo "Hello ${item}"
                             def fileName = "${item}"
-                            def (name, extension) =  fileName.split('.')
+                            def (name, extension) =  fileName.split('-')
 
                             echo name
                             echo extension
