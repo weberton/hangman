@@ -20,7 +20,7 @@ pipeline {
             steps {
 
                 script {
-                    sh 'ls /opt/'
+                    sh 'mkdir -p dist'
                     def files =  findFiles(glob: "**/*.jar")
                     files.each { item ->
 
@@ -32,7 +32,8 @@ pipeline {
                             echo extension
                             //assert v == '1128'
                             //assert z == '2'
-                           // fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '${item}', targetLocation: 'F:\Test\Sample')])
+                            def newName = name + '-latest.jar';
+                            fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: name, targetLocation: './dist/{newName}')])
                     }
                     //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'C:\workspace\Hello\**', targetLocation: 'F:\Test\Sample')])
                  }
