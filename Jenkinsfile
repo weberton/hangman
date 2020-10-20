@@ -19,6 +19,7 @@ pipeline {
             steps {
 
                 script {
+                    sh 'ls /opt/maven'
                     def folders =  findFiles(glob: '**/*')
                          .findAll { f -> f.directory }
                  }
