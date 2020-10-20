@@ -36,7 +36,7 @@ pipeline {
                             def test = name.replace('/', '\\') - ~/\\[^\\]+$/
                             echo 'Test ' + test
 
-                            echo item.getName()
+                            echo 'NAME ALALLLALLALA: ' item.getName()
 
                             def newName = name + '-latest.jar';
                              sh 'mv '+ fileName + ' dist/' + newName
