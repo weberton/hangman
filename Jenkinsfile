@@ -33,7 +33,7 @@ pipeline {
                             //assert v == '1128'
                             //assert z == '2'
                             def newName = name + '-latest.jar';
-                            fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: name, targetLocation: './dist/{newName}')])
+                            fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: fileName, targetLocation: './dist/{newName}')])
                     }
                     //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'C:\workspace\Hello\**', targetLocation: 'F:\Test\Sample')])
                  }
