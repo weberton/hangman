@@ -29,10 +29,12 @@ pipeline {
                             def fileName = "${item}"
                             def (name, extension) =  fileName.split('\\.')
 
+
                             echo name
                             echo extension
-                            //assert v == '1128'
-                            //assert z == '2'
+
+                            def test = name.replace('/', '\\') - ~/\\[^\\]+$/
+                            echo 'Test ' + test
 
                             def newName = name + '-latest.jar';
                              sh 'mv '+ fileName + ' dist/' + newName
