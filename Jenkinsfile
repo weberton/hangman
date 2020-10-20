@@ -34,6 +34,7 @@ pipeline {
                             echo extension
 
 
+                              fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: fileName, targetLocation: 'dist/test.jar')])
                             //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: fileName, targetLocation: 'dist/'+ newName)])
 
                     }
