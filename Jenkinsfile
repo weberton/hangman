@@ -27,22 +27,15 @@ pipeline {
 
                             echo "Hello ${item}"
                             def fileName = "${item}"
-                            def (name, extension) =  fileName.split('\\.')
+                            def (name, extension) =  item.getName().split('\\.')
 
 
                             echo name
                             echo extension
 
-                            def test = fileName.replace('/', '\\') - ~/\\[^\\]+$/
-                            echo 'Test ' + test
 
-                            echo 'NAME ALALLLALLALA: ' + item.getName()
-
-                            def newName = name + '-latest.jar';
-                             //sh 'mv '+ fileName + ' dist/' + newName
-                            echo 'New name:' + newName
                             //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: fileName, targetLocation: 'dist/'+ newName)])
-                            sh 'ls dist'
+
                     }
                     //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'C:\workspace\Hello\**', targetLocation: 'F:\Test\Sample')])
                  }
