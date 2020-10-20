@@ -33,10 +33,12 @@ pipeline {
                             echo name
                             echo extension
 
+                            def newName = name + '-latest-jar'
 
-                              fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: fileName, targetLocation: 'dist/test.jar')])
+
+                              fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: fileName, targetLocation: 'dist/' + newName)])
                             //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: fileName, targetLocation: 'dist/'+ newName)])
-                            sh 'ls dist'
+                            sh 'ls dist -la'
 
                     }
                     //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'C:\workspace\Hello\**', targetLocation: 'F:\Test\Sample')])
