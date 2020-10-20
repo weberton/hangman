@@ -21,7 +21,10 @@ pipeline {
 
                 script {
                     sh 'ls /opt/'
-                    def folders =  findFiles(glob: "**/*.jar")
+                    def files =  findFiles(glob: "**/*.jar")
+                    for (file in files) {
+                        echo file
+                    }
                  }
             }
         }
