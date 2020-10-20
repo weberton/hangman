@@ -10,6 +10,9 @@ pipeline {
 
          stage('Clean') {
              steps {
+             script {
+              sh 'ls /opt/maven'
+             }
              echo "PATH is: $PATH"
                        sh 'mvn clean package'
               }
