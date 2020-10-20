@@ -38,7 +38,7 @@ pipeline {
 
                               fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: fileName, targetLocation: 'dist/' + newName)])
                             //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: fileName, targetLocation: 'dist/'+ newName)])
-                            sh 'ls dist -la'
+                            sh 'ls -la dist'
 
                     }
                     //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'C:\workspace\Hello\**', targetLocation: 'F:\Test\Sample')])
