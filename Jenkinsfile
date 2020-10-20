@@ -25,8 +25,9 @@ pipeline {
                     files.each { item ->
 
                             echo "Hello ${item}"
-                            def fileName = "${item}".split(".")
-                            echo fileName
+                            def fileName = "${item}"
+                            def test = fileName.split(".")
+                            echo test
                            // fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '${item}', targetLocation: 'F:\Test\Sample')])
                     }
                     //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'C:\workspace\Hello\**', targetLocation: 'F:\Test\Sample')])
