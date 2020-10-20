@@ -26,6 +26,7 @@ pipeline {
 
                             echo "Hello ${item}"
                             def fileName = "${item}"
+                            echo fileName
                            // fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '${item}', targetLocation: 'F:\Test\Sample')])
                     }
                     //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'C:\workspace\Hello\**', targetLocation: 'F:\Test\Sample')])
