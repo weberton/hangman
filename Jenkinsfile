@@ -3,12 +3,11 @@ pipeline {
 
     stages {
 
-        stage('Build') {
-                stage('Clean') {
-                    steps {
+
+         stage('Clean') {
+             steps {
                        sh 'mvn clean package'
-                    }
-                }
+              }
          }
 
         stage('Files') {
@@ -19,7 +18,6 @@ pipeline {
                          .findAll { f -> f.directory }
                  }
             }
-           }
         }
     }
 }
