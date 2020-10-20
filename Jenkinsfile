@@ -33,13 +33,13 @@ pipeline {
                             echo name
                             echo extension
 
-                            def test = name.replace('/', '\\') - ~/\\[^\\]+$/
+                            def test = fileName.replace('/', '\\') - ~/\\[^\\]+$/
                             echo 'Test ' + test
 
                             echo 'NAME ALALLLALLALA: ' item.getName()
 
                             def newName = name + '-latest.jar';
-                             sh 'mv '+ fileName + ' dist/' + newName
+                             //sh 'mv '+ fileName + ' dist/' + newName
                             echo 'New name:' + newName
                             //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: fileName, targetLocation: 'dist/'+ newName)])
                             sh 'ls dist'
