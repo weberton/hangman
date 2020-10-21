@@ -17,12 +17,11 @@ pipeline {
          }
 
         stage('Files') {
-            steps {
-
+/*             steps {
                 script {
                     sh 'rm -r dist'
                     sh 'mkdir -p dist'
-                    def files =  findFiles(glob: "**/*.jar")
+                    def files =  findFiles(glob: "** /* *//*.jar")
                     files.each { item ->
 
                             echo "Hello ${item}"
@@ -39,10 +38,22 @@ pipeline {
                               fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: fileName, targetLocation: 'dist/' + newName)])
                             //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: fileName, targetLocation: 'dist/'+ newName)])
                             sh 'ls -la dist'
-
                     }
                     //fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'C:\workspace\Hello\**', targetLocation: 'F:\Test\Sample')])
                  }
+            } */
+
+            steps {
+                script {
+                    // sh 'find . -type f -iname "*-app-client.jar"
+                     def  FILES_LIST = sh (script: "find . -type f -iname *-app-client.jar   '${workers_dir}'", returnStdout: true).trim()
+
+                     files.each {item ->
+
+                        echo "File name ${item}"
+
+                     }
+                }
             }
         }
     }
