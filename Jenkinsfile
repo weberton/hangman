@@ -47,7 +47,7 @@ pipeline {
                 script {
                     // sh 'find . -type f -iname "*-app-client.jar"
                      sh 'rm -r dist'
-                     def  FILES_LIST = sh (script: 'find . -type f -iname "*.jar"', returnStdout: true).trim()
+                     def  FILES_LIST = sh (script: 'find . -type f -iname "*.jar"', returnStdout: true).trim().split("\\r?\\n"))
                       echo "FILES_LIST : ${FILES_LIST}"
                      FILES_LIST.each {item ->
 
