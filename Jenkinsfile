@@ -46,7 +46,7 @@ pipeline {
             steps {
                 script {
                     // sh 'find . -type f -iname "*-app-client.jar"
-                     def  FILES_LIST = sh (script: "find . -type f -iname *-app-client.jar   '${workers_dir}'", returnStdout: true).trim()
+                     def  FILES_LIST = sh (script: "find . -type f -iname *-app-client.jar   '.'", returnStdout: true).trim()
 
                      files.each {item ->
 
